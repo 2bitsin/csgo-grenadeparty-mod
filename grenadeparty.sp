@@ -5,8 +5,6 @@
 
 #pragma newdecls required
 
-//#define COMMANDS_PER_PAGE	10
-
 public Plugin myinfo = 
 {
 	name = "Grenade Party",
@@ -18,10 +16,6 @@ public Plugin myinfo =
 
 public void OnPluginStart()
 {
-	//LoadTranslations("common.phrases");
-	//LoadTranslations("adminhelp.phrases");
-	//RegConsoleCmd("sm_help", HelpCmd, "Displays SourceMod commands and descriptions");
-	//RegConsoleCmd("sm_searchcmd", HelpCmd, "Searches SourceMod commands");
 	PrintToServer("Grenade Party!");
 	HookEvent("player_spawned", Event_PlayerSpawned);
 	HookEvent("player_spawn", Event_PlayerSpawned);
@@ -65,6 +59,5 @@ public Action Event_PlayerSpawned(Event event, const char[] name, bool dontBroad
 			GivePlayerItem(client, "weapon_molotov");
 		}
 	}
-	//GivePlayerItem(client, "weapon_c4");	
 	return Plugin_Handled;	
 }
